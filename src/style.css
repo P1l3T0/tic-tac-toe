@@ -4,6 +4,10 @@
     /* outline: 1px solid green; */
 }
 
+body {
+    background: linear-gradient(to top, blueviolet, rgb(185, 124, 243));
+}
+
 .board {
     height: 100vh;
     display: flex;
@@ -20,14 +24,15 @@
     width: 10rem;
     height: 10rem; 
     font-size: 8rem;
-    color: rgb(176, 92, 255);
-    text-shadow: 1px 1px 2px black;
+    color: rgb(202, 146, 255);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
     border: 5px solid rgb(96, 4, 182);
     border-radius: 10px;
     margin: .1rem;
     align-items: center;
     background: transparent;
     cursor: pointer;
+    transition: 250ms ease-in-out;
 }
 
 .square:hover {
@@ -35,12 +40,13 @@
 }
 
 .status {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 4rem;
     font-weight: 800;
+    text-transform: uppercase;
     margin: 0 0 1rem 0;
-    color: blueviolet;
-    text-shadow: 1px 1px 2px black;
+    color: rgb(127, 26, 221);
+    text-shadow: 2px 2px 2px white;
 }
 
 .reset {
@@ -52,8 +58,8 @@
     font-weight: 800;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px black;
-    color: blueviolet;
-    border: 5px solid blueviolet;
+    color: rgb(232, 207, 255);
+    border: 5px solid rgb(96, 4, 182);
     border-radius: 20px;
     transition: 500ms ease-in-out;
 }
@@ -61,6 +67,5 @@
 .reset:hover {
     color: white;
     background: rgb(179, 99, 255);
-    border: 5px solid blueviolet;
     transform: scale(1.05);
 }
