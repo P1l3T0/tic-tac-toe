@@ -20,13 +20,18 @@
     width: 10rem;
     height: 10rem; 
     font-size: 8rem;
+    color: rgb(176, 92, 255);
+    text-shadow: 1px 1px 2px black;
+    border: 5px solid rgb(96, 4, 182);
+    border-radius: 10px;
+    margin: .1rem;
     align-items: center;
     background: transparent;
     cursor: pointer;
 }
 
 .square:hover {
-    background: rgb(150, 150, 150);
+    background: rgb(124, 0, 240);
 }
 
 .status {
@@ -36,7 +41,6 @@
     margin: 0 0 1rem 0;
     color: blueviolet;
     text-shadow: 1px 1px 2px black;
-
 }
 
 .reset {
