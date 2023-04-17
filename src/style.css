@@ -12,11 +12,14 @@
     flex-direction: column;
 }
 
+.board-row {
+    display: flex;
+}
+
 .square {
     width: 10rem;
     height: 10rem; 
     font-size: 8rem;
-    padding: 1.18rem 0;
     align-items: center;
     background: transparent;
     cursor: pointer;
