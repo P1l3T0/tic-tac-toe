@@ -2,11 +2,7 @@ import { useState } from 'react';
 
 
 export default function App() {
-    return (
-        <>
-            <Board />
-        </>
-    );
+    return <Board />;
 }
 
 function Board() {
@@ -14,20 +10,19 @@ function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
-        if (squares[i]) {
-            console.log(`square ${squares[i]} already has a value!`);
+        if (squares[i])
             return;
-        }
 
         const nextSquare = squares.slice();
-        if (xIsNext) {
-            nextSquare[i] = "X";
-        }
-        else {
-            nextSquare[i] = "O";
-        }
+        xIsNext ? nextSquare[i] = "X" : nextSquare[i] = "O";
+
         setSquares(nextSquare);
         setXIsNext(!xIsNext);
+    }
+
+    function reset() {
+        setSquares(Array(9).fill(null));
+        setXIsNext(true);
     }
 
     return (
@@ -48,6 +43,8 @@ function Board() {
                     <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                     <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
                 </div>
+
+                <Reset reset={reset} />
             </div>
         </>
     );
@@ -59,5 +56,14 @@ function Square({ value, onSquareClick }) {
             className='square'
             onClick={onSquareClick}
         >{value}</button>
+    );
+}
+
+function Reset({ reset }) {
+    return (
+        <button
+            className='reset'
+            onClick={reset}
+        >Reset Game</button>
     );
 }
