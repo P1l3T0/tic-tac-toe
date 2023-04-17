@@ -10,12 +10,24 @@ export default function App() {
 }
 
 function Board() {
+    const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
+        if (squares[i]) {
+            console.log(`square ${squares[i]} already has a value!`);
+            return;
+        }
+
         const nextSquare = squares.slice();
-        nextSquare[i] = "X";
+        if (xIsNext) {
+            nextSquare[i] = "X";
+        }
+        else {
+            nextSquare[i] = "O";
+        }
         setSquares(nextSquare);
+        setXIsNext(!xIsNext);
     }
 
     return (
