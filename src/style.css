@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid green; */
+}
+
+.board {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.square {
+    width: 10rem;
+    height: 10rem; 
+    font-size: 8rem;
+    padding: 1.18rem 0;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+.square:hover {
+    background: rgb(150, 150, 150);
+}
