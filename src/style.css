@@ -28,3 +28,35 @@
 .square:hover {
     background: rgb(150, 150, 150);
 }
+
+.status {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    color: blueviolet;
+    text-shadow: 1px 1px 2px black;
+
+}
+
+.reset {
+    background: transparent;
+    margin: 2rem;
+    width: 13rem;
+    height: 5rem;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    color: blueviolet;
+    border: 5px solid blueviolet;
+    border-radius: 20px;
+    transition: 500ms ease-in-out;
+}
+
+.reset:hover {
+    color: white;
+    background: rgb(179, 99, 255);
+    border: 5px solid blueviolet;
+    transform: scale(1.05);
+}

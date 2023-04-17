@@ -10,7 +10,7 @@ function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
-        if (squares[i])
+        if (squares[i] || calculateWinner(squares))
             return;
 
         const nextSquare = squares.slice();
@@ -20,14 +20,42 @@ function Board() {
         setXIsNext(!xIsNext);
     }
 
+    function calculateWinner(squares) {
+        const lines = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        for (let i = 0; i < lines.length; i++) {
+            const [a, b, c] = lines[i];
+
+            if (squares[a] && squares[a] === squares[b] && squares[c])
+                return squares[a];
+        }
+
+        return null;
+    }
+
     function reset() {
         setSquares(Array(9).fill(null));
         setXIsNext(true);
-    }
+    };
+
+    const winner = calculateWinner(squares);
+    let status;
+
+    winner ? status = status = `Winner: ${winner}` : status = "Next player: " + (xIsNext ? "X" : "O");
 
     return (
         <>
             <div className="board">
+                <div className="status">{status}</div>
                 <div className="board-row">
                     <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                     <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -44,7 +72,7 @@ function Board() {
                     <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
                 </div>
 
-                <Reset reset={reset} />
+                <Reset onResetGame={reset} />
             </div>
         </>
     );
@@ -59,11 +87,11 @@ function Square({ value, onSquareClick }) {
     );
 }
 
-function Reset({ reset }) {
+function Reset({ onResetGame }) {
     return (
         <button
             className='reset'
-            onClick={reset}
-        >Reset Game</button>
+            onClick={onResetGame}
+        >Reset</button>
     );
 }
