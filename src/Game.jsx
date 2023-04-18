@@ -19,7 +19,7 @@ export function Game() {
 
     const moves = history.map((squares, move) => {
         let description;
-        move > 0 ? description = `Move #${move}` : description = 'Game start';
+        move > 0 ? description = `Move #${move}` : description = 'Move #0';
 
         return (
             <li key={move}>
