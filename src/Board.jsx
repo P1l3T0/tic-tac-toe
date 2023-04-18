@@ -1,21 +1,20 @@
-import { useState } from 'react';
 import { Square } from "./Square";
-import { Reset } from './Reset';
 
-export function Board() {
-    const [xIsNext, setXIsNext] = useState(true);
-    const [squares, setSquares] = useState(Array(9).fill(null));
-
+export function Board({ xIsNext, squares, onPlay }) {
     function handleClick(i) {
         if (squares[i] || calculateWinner(squares))
             return;
 
-        const nextSquare = squares.slice();
-        xIsNext ? nextSquare[i] = "X" : nextSquare[i] = "O";
+        const nextSquares = squares.slice();
+        xIsNext ? nextSquares[i] = "X" : nextSquares[i] = "O";
 
-        setSquares(nextSquare);
-        setXIsNext(!xIsNext);
+        onPlay(nextSquares);
     }
+
+    const winner = calculateWinner(squares);
+    let status;
+
+    winner ? status = `Winner: ${winner}` : status = "Next player: " + (xIsNext ? "X" : "O");
 
     function calculateWinner(squares) {
         const lines = [
@@ -35,24 +34,14 @@ export function Board() {
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
                 return squares[a];
         }
-
         return null;
     }
-
-    function reset() {
-        setSquares(Array(9).fill(null));
-        setXIsNext(true);
-    };
-
-    const winner = calculateWinner(squares);
-    let status;
-
-    winner ? status = status = `Winner: ${winner}` : status = "Next player: " + (xIsNext ? "X" : "O");
 
     return (
         <>
             <div className="board">
                 <div className="status">{status}</div>
+
                 <div className="board-row">
                     <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                     <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -68,8 +57,6 @@ export function Board() {
                     <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                     <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
                 </div>
-
-                <Reset onResetGame={reset} />
             </div>
         </>
     );
