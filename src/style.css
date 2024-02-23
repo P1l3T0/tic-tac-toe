@@ -1,129 +1,129 @@
 @import url("https://fonts.google.com/share?selection.family=Poppins:wght@100");
 
 * {
-    font-family: "Popins", sans-serif;
-    /* outline: 2px solid white; */
+  font-family: "Popins", sans-serif;
+  /* outline: 2px solid white; */
 }
 
 body {
-    background: linear-gradient(316deg, #6247aa 0%, #a594f9 74%) no-repeat;
+  background: linear-gradient(316deg, #6247aa 0%, #a594f9 74%) no-repeat;
 }
 
 ::-webkit-scrollbar {
-    background: linear-gradient(316deg, #6247aa 0%, #a594f9 74%);
-    width: .75rem;
+  background: linear-gradient(316deg, #6247aa 0%, #a594f9 74%);
+  width: .75rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background:  #523a99 ;
-    border-radius: 1rem;
+  background: #523a99;
+  border-radius: 1rem;
 }
 
 .status {
-    font-size: 4rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 0 1rem 0;
-    color: rgb(131, 45, 212);
-    text-shadow: 2px 2px 2px white;
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  color: rgb(131, 45, 212);
+  text-shadow: 2px 2px 2px white;
 }
 
 .game {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .game-board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .board-row {
-    display: flex;
+  display: flex;
 }
 
 .square {
-    width: 10rem;
-    height: 10rem; 
-    font-size: 8rem;
-    color: rgb(80, 3, 153);
-    text-shadow: 1px 1px 2px rgb(255, 255, 255);
-    border: 5px solid rgb(96, 4, 182);
-    border-radius: 10px;
-    margin: .1rem;
-    align-items: center;
-    background: transparent;
-    cursor: pointer;
-    transition: 250ms ease-in-out;
+  width: 10rem;
+  height: 10rem;
+  font-size: 8rem;
+  color: rgb(80, 3, 153);
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+  border: 5px solid rgb(96, 4, 182);
+  border-radius: 10px;
+  margin: .1rem;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
 }
 
 .square:hover {
-    background: rgb(124, 0, 240);
+  background: rgb(124, 0, 240);
 }
 
 .history-list {
-    margin: 1rem;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+  margin: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .history-list button {
-    background: transparent;
-    margin: .5rem;
-    padding: 1rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px black;
-    color: rgb(232, 207, 255);
-    border: 3px solid rgb(96, 4, 182);
-    border-radius: 20px;
-    transition: 250ms ease-in-out;
+  background: transparent;
+  margin: .5rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px black;
+  color: rgb(232, 207, 255);
+  border: 3px solid rgb(96, 4, 182);
+  border-radius: 20px;
+  transition: 250ms ease-in-out;
 }
 
 .history-list button:hover {
-    color: white;
-    background: rgb(124, 0, 240);
-    transform: scale(1.05);
+  color: white;
+  background: rgb(124, 0, 240);
+  transform: scale(1.05);
 }
 
-@media (width <= 600px) {
-    .game {
-        margin: 3rem 0;
-    }
+@media (width <=600px) {
+  .game {
+    margin: 3rem 0;
+  }
 
-    .status {
-        font-size: 2rem;
-    }
-    
-    .square {
-        width: 7rem;
-        height: 7rem; 
-        font-size: 5rem;
-    }
+  .status {
+    font-size: 2rem;
+  }
 
-    .history-list {
-        height: 45vh;
-        width: 80vw;
-        flex-direction: column;
-    }
-    
-    .history-list button {
-        font-size: .9rem;
-        margin: .2rem;
-        padding: none;
-    }
+  .square {
+    width: 7rem;
+    height: 7rem;
+    font-size: 5rem;
+  }
+
+  .history-list {
+    height: 45vh;
+    width: 80vw;
+    flex-direction: column;
+  }
+
+  .history-list button {
+    font-size: .9rem;
+    margin: .2rem;
+    padding: none;
+  }
 }
